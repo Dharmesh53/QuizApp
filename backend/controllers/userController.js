@@ -24,7 +24,9 @@ const signup = async (req, res, next) => {
         .status(400)
         .json({ msg: "User already exists!! Please login" });
     }
-    return res.status(500).json({ msg: "Unexpected error occured !!", error });
+    return res
+      .status(500)
+      .json({ msg: "Unexpected error occured !!", error: error.message });
   }
 };
 
@@ -44,7 +46,9 @@ const login = async (req, res, next) => {
     genTokenAndSetCookie(user, res);
     return res.status(200).json({ msg: "Loggedin Succesfully!!" });
   } catch (error) {
-    return res.status(500).json({ msg: "Unexpected error occured !!", error });
+    return res
+      .status(500)
+      .json({ msg: "Unexpected error occured !!", error: error.message });
   }
 };
 

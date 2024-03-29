@@ -4,6 +4,7 @@ import "./App.css";
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import NoMatch from "./pages/NoMatch";
+import Create from "./pages/Create";
 import Layout from "./layout/MainLayout";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           {isLoggedIn && <Route path="dashboard" element={<Dashboard />} />}
+          {isLoggedIn && <Route path="create/:id" element={<Create />} />}
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<Signup />} />
           <Route path="*" element={<NoMatch />} />

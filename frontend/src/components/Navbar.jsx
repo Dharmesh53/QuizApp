@@ -25,10 +25,13 @@ const Navbar = () => {
   return (
     <div>
       <nav className="flex justify-between border-2 p-2 border-gray-100 rounded-lg mt-2">
-        <div className="align-middle">
-          <Link to="/">
-            <button variant="ghost" className="text-lg  bg-slate-600">
-              NexonQuiz
+        <div className="flex ">
+          <Link to="/" className="flex">
+            <button
+              variant="ghost"
+              className="text-2xl text-purple-900 font-bold"
+            >
+              Nexon Quizs
             </button>
           </Link>
         </div>

@@ -28,4 +28,16 @@ const createQuiz = async (req, res, next) => {
   }
 };
 
+const showQuiz = async (req, res, next) => {
+  try {
+    const quizzes = await Quiz.find();
+    return res.status(201).json(quizzes);
+  } catch (error) {
+    return res
+      .status(500)
+      .json({ msg: "Unexpected error occured !!", error: error.message });
+  }
+};
+
 exports.createQuiz = createQuiz;
+exports.showQuiz = showQuiz;

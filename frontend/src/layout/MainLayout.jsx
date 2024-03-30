@@ -4,7 +4,7 @@ import { Toaster } from "@/components/ui/toaster";
 
 const Layout = () => {
   return (
-    <div className="w-2/3 m-auto font-pops">
+    <div className="w-2/3 m-auto font-pops ">
       <Navbar />
       <Outlet />
       <Toaster />

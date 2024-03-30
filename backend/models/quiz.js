@@ -20,6 +20,9 @@ const quizSchema = new Schema({
     type: String,
     required: true,
   },
+  users: {
+    type: Array,
+  },
 });
 
 module.exports = mongoose.model("Quiz", quizSchema);

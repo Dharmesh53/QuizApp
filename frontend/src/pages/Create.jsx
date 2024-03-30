@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useState } from "react";
-import { useParams } from "react-router-dom";
 import {
   Select,
   SelectContent,
@@ -11,7 +10,8 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
-import Question from "../components/Question";
+import Question from "../components/CreateQuestion";
+import { useParams, useNavigate } from "react-router-dom";
 
 axios.defaults.withCredentials = true;
 
@@ -28,6 +28,7 @@ const Create = () => {
   const [data, setData] = useState([format]);
 
   const sendReq = async () => {
+    const navigate = useNavigate();
     try {
       const quiz = {
         id,
@@ -75,8 +76,11 @@ const Create = () => {
       sendReq().then(() => {
         toast({
           title: "Done !! ",
-          description: "Created your quiz",
+          description: "Created your quiz, Redirecting to Dashboard in 3s",
         });
+        setTimeout(() => {
+          navigate("/dashboard");
+        }, 3000);
       });
     }
   };

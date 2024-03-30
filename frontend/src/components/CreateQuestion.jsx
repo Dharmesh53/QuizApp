@@ -3,7 +3,7 @@ import { Button } from "./ui/button";
 import { useState } from "react";
 import { Checkbox } from "./ui/checkbox";
 
-const Question = ({ data, setData, index }) => {
+const CreateQuestion = ({ data, setData, index }) => {
   const [options, setOptions] = useState(new Array(4).fill(""));
   const [answers, setAnswers] = useState(new Array(4).fill(false));
 
@@ -100,4 +100,4 @@ const Question = ({ data, setData, index }) => {
   );
 };
 
-export default Question;
+export default CreateQuestion;

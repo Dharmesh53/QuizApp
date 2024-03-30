@@ -12,7 +12,7 @@ const QuizCard = ({ quiz }) => {
     <Link to={`/quiz/${quiz._id}`}>
       <div className="cursor-pointer overflow-hidden">
         <Card
-          className={`hover:bg-gradient-to-t ${
+          className={` hover:bg-gradient-to-t ${
             quiz.difficult === "easy"
               ? "from-cyan-400"
               : quiz.difficult === "medium"

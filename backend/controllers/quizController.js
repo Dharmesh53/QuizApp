@@ -31,10 +31,15 @@ const createQuiz = async (req, res, next) => {
 const showQuiz = async (req, res, next) => {
   try {
     const id = req.query.id;
-    if (id) {
-      var _id = new mongoose.Types.ObjectId(id);
-      const quiz = await Quiz.findById(_id, { data: 1 });
+    const dashboard = req.query.dashboard;
+    var _id = new mongoose.Types.ObjectId(id);
+    if (dashboard) {
+      const quiz = await Quiz.findById(_id);
       return res.status(200).json(quiz);
+    }
+    if (id) {
+      const quizOnlyData = await Quiz.findById(_id, { data: 1 });
+      return res.status(200).json(quizOnlyData);
     }
     const quizzes = await Quiz.find();
     return res.status(201).json(quizzes);

@@ -3,6 +3,8 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { login } from "../store/authSlice";
+import { Input } from "./ui/input";
+import { Button } from "./ui/button";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -43,15 +45,15 @@ const Login = () => {
   };
 
   return (
-    <div className="mt-7">
+    <div className="mt-7 bg-white p-7 rounded">
       <div className="w-1/3 m-auto ">
         <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
           <label htmlFor="email">
             Email
-            <input
+            <Input
               name="email"
               type="email"
-              className="outline ml-10"
+              className="outline mt-3"
               value={data.email}
               onChange={(e) => handleChange(e)}
               placeholder="Enter your email"
@@ -59,18 +61,18 @@ const Login = () => {
           </label>
           <label htmlFor="password">
             Password
-            <input
+            <Input
               name="password"
               type="password"
-              className="outline ml-10"
+              className="outline mt-3"
               value={data.password}
               onChange={(e) => handleChange(e)}
               placeholder="Enter your password"
             />
           </label>
-          <button className="border-2" type="submit">
+          <Button className="border-2" type="submit">
             Login
-          </button>
+          </Button>
         </form>
       </div>
     </div>

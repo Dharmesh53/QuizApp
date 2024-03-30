@@ -24,7 +24,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav className="flex justify-between border-2 p-2 border-gray-100 rounded-lg mt-2">
+      <nav className="flex justify-between border-2 p-2 border-gray-100 rounded-lg mt-2  bg-white ">
         <div className="flex ">
           <Link to="/" className="flex">
             <button
@@ -48,10 +48,10 @@ const Navbar = () => {
           ) : (
             <>
               <Link to="/login">
-                <Button variant="ghost">Login</Button>
+                <Button variant="outline">Login</Button>
               </Link>
               <Link to="/signup">
-                <Button variant="ghost">Signup</Button>
+                <Button variant="outline">Signup</Button>
               </Link>
             </>
           )}

@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { login } from "../store/authSlice";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -73,6 +74,10 @@ const Login = () => {
           <Button className="border-2" type="submit">
             Login
           </Button>
+          <Link to="/signup" className="w-2/3 m-auto">
+            Don't have a account{" "}
+            <span className="text-indigo-600 underline">Sign Up</span>
+          </Link>
         </form>
       </div>
     </div>

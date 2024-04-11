@@ -24,9 +24,9 @@ const Home = () => {
   }, []);
   return (
     <div className="mt-4">
-      {data.length > 0 && (
+      {data?.length > 0 && (
         <div className="grid  gap-3 md:grid-cols-2 sm:grid-cols-1">
-          {data.map((item, i) => (
+          {data?.map((item, i) => (
             <div key={i}>
               <Card quiz={item} />
             </div>

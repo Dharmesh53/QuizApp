@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { login } from "../store/authSlice";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
+import { Link } from "react-router-dom";
 
 const Signup = () => {
   const dispatch = useDispatch();
@@ -85,6 +86,10 @@ const Signup = () => {
           <Button className="border-2" type="submit">
             Sign up
           </Button>
+          <Link to="/login" className="w-2/3 m-auto">
+            Already have a account{" "}
+            <span className="text-indigo-600 underline">Login</span>
+          </Link>
         </form>
       </div>
     </div>

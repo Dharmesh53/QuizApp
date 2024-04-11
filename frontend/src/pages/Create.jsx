@@ -17,6 +17,7 @@ axios.defaults.withCredentials = true;
 
 const Create = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const { toast } = useToast();
   const format = {
     question: "",
@@ -28,7 +29,6 @@ const Create = () => {
   const [data, setData] = useState([format]);
 
   const sendReq = async () => {
-    const navigate = useNavigate();
     try {
       const quiz = {
         id,

@@ -63,6 +63,7 @@ const getUser = async (req, res, next) => {
 
 const logout = async (req, res, next) => {
   const cookie = req.headers.cookie;
+  if (!cookie) return res.status(404).json({ msg: "Cookie not found" });
   const token = cookie.split("=")[1];
   if (!token) {
     return res.status(404).json({ msg: "Token not found" });

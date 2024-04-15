@@ -9,7 +9,7 @@ const Home = () => {
   const [data, setData] = useState([]);
   const sendReq = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/quizzes");
+      const res = await axios.get("https://quizapp-1e1n.onrender.com/api/quizzes");
       const result = res.data;
       return result;
     } catch (error) {

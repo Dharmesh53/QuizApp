@@ -10,7 +10,7 @@ const Navbar = () => {
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   const dispatch = useDispatch();
   const sendReq = async () => {
-    const res = await axios.post("http://localhost:5000/api/logout", null, {
+    const res = await axios.post("https://quizapp-1e1n.onrender.com/api/logout", null, {
       withCredentials: true,
     });
     if (res.status == 200) {

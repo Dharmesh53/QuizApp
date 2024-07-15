@@ -26,7 +26,7 @@ const dashboard = () => {
 
   const sendRequest = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/user", {
+      const res = await axios.get("https://quizapp-1e1n.onrender.com/api/user", {
         withCredentials: true,
       });
       if (res.status == 400) {
@@ -45,7 +45,7 @@ const dashboard = () => {
       setUser(data);
       const quizReq = data.quizzes.map(async (id) => {
         const res = await axios.get(
-          `http://localhost:5000/api/quizzes?id=${id}&dashboard=true`
+          `https://quizapp-1e1n.onrender.com/api/quizzes?id=${id}&dashboard=true`
         );
         return res.data;
       });

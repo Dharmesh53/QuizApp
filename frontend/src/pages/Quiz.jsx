@@ -21,7 +21,7 @@ const Quiz = () => {
 
   const sendReq = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/quizzes?id=${id}`);
+      const res = await axios.get(`https://quizapp-1e1n.onrender.com/api/quizzes?id=${id}`);
       const result = res.data;
       return result;
     } catch (error) {
@@ -41,7 +41,7 @@ const Quiz = () => {
 
   const handleStart = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/user");
+      const res = await axios.get("https://quizapp-1e1n.onrender.com/api/user");
       const result = res.data;
       setUserId(result._id);
       if (res.status == 200) {
@@ -68,7 +68,7 @@ const Quiz = () => {
     });
 
     try {
-      await axios.post(`http://localhost:5000/api/updateQuiz?id=${id}`, {
+      await axios.post(`https://quizapp-1e1n.onrender.com/api/updateQuiz?id=${id}`, {
         answers,
         result: totalCorrect,
         userId,
